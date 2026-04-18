@@ -52,7 +52,7 @@ tickers_list = df_baseline['Ticker'].dropna().tolist()
 st.write("") 
 col_title, col_btn = st.columns([4, 1])
 with col_title:
-    st.title("🌐 Global ETF Screener Dashboard")
+    st.title("🌐 Right Horizons - Global ETF Screener Dashboard")
 with col_btn:
     st.write("") 
     refresh_clicked = st.button("🔄 Refresh Live Prices", use_container_width=True)
