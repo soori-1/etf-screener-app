@@ -6,7 +6,7 @@ from datetime import datetime
 import numpy as np
 
 # --- 1. Page Configuration ---
-st.set_page_config(page_title="Global ETF Screener", layout="wide")
+st.set_page_config(page_title="Right Horizons - Global ETF Screener", layout="wide")
 st.markdown('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
 
 # --- 2. Data Handling (Baseline + Volume) ---
