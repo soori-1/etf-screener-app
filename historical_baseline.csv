@@ -1,0 +1,288 @@
+Ticker,Name,Country,Sector,Theme,Yesterday_Close,1D (%),1W (%),1M (%),3M (%),6M (%),1Y (%),52W High,52W Low
+IVV,iShares Core S&P 500 ETF,United States,Broad Market,Broad Market / Core,713.36,1.22,4.5,7.62,2.87,7.41,39.86,713.36,510.06
+IEFA,iShares Core MSCI EAFE ETF,Broad,Broad Market,Broad Market / Core,97.49,1.36,2.28,8.08,5.39,13.42,34.82,98.56,72.31
+IEMG,iShares Core MSCI Emerging Markets ETF,Broad,Broad Market,Emerging Markets,78.1,1.91,5.19,10.61,9.72,19.34,54.82,78.1,50.45
+IWF,iShares Russell 1000 Growth ETF,United States,Broad Market,Growth,476.41,1.53,6.76,9.01,1.31,2.2,43.81,490.78,331.28
+IJH,iShares Core S&P Mid-Cap ETF,United States,Broad Market,Mid-Cap,72.9,1.97,3.48,8.5,4.03,12.73,37.88,72.9,52.87
+IJR,iShares Core S&P Small-Cap ETF,United States,Broad Market,Small-Cap,135.39,2.03,3.99,10.77,5.07,14.15,45.42,135.39,93.1
+ITOT,iShares Core S&P Total U.S. Stock Market ETF,United States,Broad Market,Broad Market / Core,155.59,1.3,4.65,7.88,2.83,7.36,40.36,155.59,110.85
+IWM,iShares Russell 2000 ETF,United States,Broad Market,Broad Market / Core,275.78,2.16,5.54,12.1,4.05,10.73,52.54,275.78,180.79
+EFA,iShares MSCI EAFE ETF,Broad,Broad Market,Broad Market / Core,104.32,1.27,2.09,7.89,5.1,13.17,33.96,105.66,77.88
+IWD,iShares Russell 1000 Value ETF,United States,Broad Market,Value,227.15,0.98,2.39,6.04,4.02,12.38,33.7,227.15,169.9
+IVW,iShares S&P 500 Growth ETF,United States,Broad Market,Growth,128.32,1.37,6.32,9.81,3.72,6.78,50.03,128.32,85.53
+IXUS,iShares Core MSCI Total International Stock ETF,Broad,Broad Market,Broad Market / Core,94.25,1.46,3.2,8.9,6.93,15.48,42.04,94.47,66.35
+IVE,iShares S&P 500 Value ETF,United States,Broad Market,Value,220.89,1.04,2.54,5.22,1.81,7.87,29.27,221.27,170.88
+QUAL,iShares MSCI USA Quality Factor ETF,United States,Broad Market,Quality,206.92,1.27,3.73,6.62,1.9,7.38,32.37,206.92,156.32
+IWR,iShares Russell Mid-Cap ETF,United States,Broad Market,Mid-Cap,104.18,1.42,3.52,6.9,3.33,8.99,34.32,104.18,77.56
+IWB,iShares Russell 1000 ETF,United States,Broad Market,Broad Market / Core,388.89,1.21,4.53,7.57,2.67,7.05,39.32,388.89,279.14
+DGRO,iShares Core Dividend Growth ETF,United States,Broad Market,"Growth, Dividend/Income",73.19,0.95,1.98,5.07,2.86,8.57,30.74,73.67,55.98
+DYNF,iShares U.S. Equity Factor Rotation Active ETF,United States,Broad Market,Broad Market / Core,63.7,1.08,4.02,7.73,4.53,8.46,43.3,63.7,44.45
+EFV,iShares MSCI EAFE Value ETF,Broad,Broad Market,Value,78.61,0.68,1.13,7.27,7.2,18.65,40.69,79.94,55.87
+OEF,iShares S&P 100 ETF,United States,Broad Market,Broad Market / Core,349.72,1.2,4.95,8.15,2.07,5.6,42.08,349.72,246.14
+IDEV,iShares Core MSCI International Developed Markets ETF,Broad,Broad Market,Broad Market / Core,89.91,1.3,2.36,7.99,5.47,13.69,36.34,90.73,65.95
+EEM,iShares MSCI Emerging Markets ETF,Broad,Broad Market,Emerging Markets,63.64,1.91,5.09,10.56,9.55,19.89,55.51,63.64,40.92
+IUSG,iShares Core S&P U.S. Growth ETF,United States,Broad Market,Growth,175.69,1.44,6.24,9.77,3.94,7.35,49.91,175.69,117.2
+ACWI,iShares MSCI ACWI ETF,Broad,Broad Market,Broad Market / Core,150.9,1.34,4.04,8.01,4.07,9.86,39.96,150.9,107.81
+IUSV,iShares Core S&P U.S. Value ETF,United States,Broad Market,Value,107.07,1.09,2.54,5.39,1.89,8.13,29.61,107.23,82.61
+USMV,iShares MSCI USA Min Vol Factor ETF,United States,Broad Market,Low Volatility,94.86,0.5,2.27,1.47,0.71,1.48,9.24,97.41,86.83
+DVY,iShares Select Dividend ETF,United States,Broad Market,Dividend/Income,153.15,0.18,0.47,2.92,4.39,10.34,28.6,156.73,119.09
+SOXX,iShares Semiconductor ETF,United States,Technology,Broad Market / Core,415.71,2.4,7.53,22.89,23.35,44.83,155.66,415.71,162.6
+MTUM,iShares MSCI USA Momentum Factor ETF,United States,Broad Market,Momentum,274.46,1.34,4.18,11.46,6.8,8.08,45.66,274.46,188.42
+IYW,iShares U.S. Technology ETF,United States,Technology,Broad Market / Core,210.07,1.7,8.13,11.35,5.13,6.92,64.61,211.13,127.62
+IWP,iShares Russell Mid-Cap Growth ETF,United States,Broad Market,"Growth, Mid-Cap",137.75,1.98,5.67,5.16,-2.67,-3.49,25.62,145.07,109.66
+IWV,iShares Russell 3000 ETF,United States,Broad Market,Broad Market / Core,404.36,1.24,4.56,7.74,2.75,7.23,39.83,404.36,289.18
+EWJ,iShares MSCI Japan ETF,Japan,Broad Market,Broad Market / Core,90.19,0.87,2.34,7.18,5.58,15.1,38.87,93.97,64.94
+EMXC,iShares MSCI Emerging Markets ex China ETF,Broad,Broad Market,Emerging Markets,89.66,2.07,5.38,12.38,16.06,30.99,70.08,89.66,52.72
+IWY,iShares Russell Top 200 Growth ETF,United States,Broad Market,Growth,278.14,1.37,6.73,9.06,1.49,2.25,43.85,287.76,193.36
+ESGU,iShares ESG Aware MSCI USA ETF,United States,Broad Market,ESG/Sustainability,154.41,1.25,4.7,7.69,2.59,6.84,39.58,154.41,110.63
+IWS,iShares Russell Mid-Cap Value ETF,United States,Broad Market,"Value, Mid-Cap",155.91,1.31,2.91,7.38,5.15,13.05,36.77,155.91,113.99
+ITA,iShares U.S. Aerospace & Defense ETF,United States,Industrials,Broad Market / Core,231.94,1.27,1.0,0.22,-3.78,11.75,59.21,250.42,145.38
+SCZ,iShares MSCI EAFE Small-Cap ETF,Broad,Broad Market,Small-Cap,85.19,1.45,2.87,8.51,5.88,13.61,37.05,85.72,62.16
+PFF,iShares Preferred and Income Securities ETF,United States,Broad Market,Dividend/Income,31.46,0.41,2.18,3.06,-0.01,2.3,13.78,31.65,27.65
+IWO,iShares Russell 2000 Growth ETF,United States,Broad Market,Growth,356.35,2.2,7.38,12.92,2.37,6.64,52.53,356.35,233.62
+HDV,iShares Core High Dividend ETF,United States,Broad Market,Dividend/Income,133.94,0.19,-0.03,0.65,6.19,12.12,24.11,139.31,107.92
+IWN,iShares Russell 2000 Value ETF,United States,Broad Market,Value,206.45,2.07,3.57,11.19,5.91,15.13,52.51,206.45,135.37
+IQLT,iShares MSCI Intl Quality Factor ETF,Broad,Broad Market,Quality,49.68,1.37,2.35,8.31,5.54,12.4,28.51,49.72,38.66
+EWY,iShares MSCI South Korea ETF,South Korea,Broad Market,Broad Market / Core,152.33,3.3,9.8,15.51,37.17,82.87,186.36,152.33,53.2
+ESGD,iShares ESG Aware MSCI EAFE ETF,Broad,Broad Market,ESG/Sustainability,103.0,1.29,2.33,8.01,4.74,12.38,32.43,104.41,77.77
+VLUE,iShares MSCI USA Value Factor ETF,United States,Broad Market,Value,158.22,1.24,4.0,8.76,9.96,26.5,66.94,158.22,94.78
+EFG,iShares MSCI EAFE Growth ETF,Broad,Broad Market,Growth,122.36,1.92,3.29,8.95,2.88,7.93,27.36,123.38,96.07
+EZU,iShares MSCI Eurozone ETF,Broad,Broad Market,Broad Market / Core,68.22,1.76,2.43,9.34,3.49,11.1,32.94,69.23,51.32
+IJK,iShares S&P Mid-Cap 400 Growth ETF,United States,Broad Market,"Growth, Mid-Cap",109.81,2.21,4.23,8.69,6.09,15.15,43.12,109.81,76.73
+IGF,iShares Global Infrastructure ETF,Broad,Industrials,Broad Market / Core,67.56,0.28,-1.53,1.5,9.23,10.31,27.72,69.37,52.9
+INDA,iShares MSCI India ETF,India,Broad Market,Broad Market / Core,51.28,2.56,3.93,7.46,-3.65,-4.61,-3.25,55.86,45.42
+EWZ,iShares MSCI Brazil ETF,Brazil,Broad Market,Broad Market / Core,41.16,-0.75,-0.41,13.51,23.38,45.3,72.21,41.73,23.9
+ACWX,iShares MSCI ACWI ex U.S. ETF,Broad,Broad Market,Broad Market / Core,74.47,1.37,3.02,8.57,6.49,15.39,40.98,74.84,52.82
+BAI,iShares A.I. Innovation and Tech Active ETF,Broad,Technology,Broad Market / Core,40.82,2.0,7.48,19.25,17.57,18.94,108.35,40.82,19.59
+IJJ,iShares S&P Mid-Cap 400 Value ETF,United States,Broad Market,"Value, Mid-Cap",141.47,1.84,2.83,8.41,1.9,10.19,32.43,143.25,106.83
+IGM,iShares Expanded Tech Sector ETF,United States,Technology,Broad Market / Core,138.5,1.39,8.46,12.46,6.2,8.43,67.4,138.5,82.73
+IBB,iShares Biotechnology ETF,United States,Technology,Broad Market / Core,176.66,1.46,4.3,7.86,3.65,15.38,51.04,177.51,116.35
+IOO,iShares Global 100 ETF,Broad,Broad Market,Broad Market / Core,133.34,1.48,4.58,9.18,3.95,11.52,50.6,133.34,88.54
+EWT,iShares MSCI Taiwan ETF,Taiwan,Broad Market,AI & Robotics,83.22,2.3,8.16,16.65,23.67,33.93,96.84,83.22,42.28
+MCHI,iShares MSCI China ETF,China,Broad Market,Broad Market / Core,59.29,1.02,3.69,3.6,-6.76,-5.12,22.71,66.18,48.32
+IJS,iShares S&P Small-Cap 600 Value ETF,United States,Broad Market,"Value, Small-Cap",127.46,1.85,3.73,10.17,4.18,15.61,49.58,127.46,85.21
+IDV,iShares International Select Dividend ETF,Broad,Broad Market,Dividend/Income,44.11,0.02,0.34,5.43,9.84,23.08,49.61,44.59,29.48
+IEUR,iShares Core MSCI Europe ETF,Broad,Broad Market,Broad Market / Core,76.0,1.52,2.44,8.82,4.17,12.36,31.66,76.75,57.73
+THRO,iShares U.S. Thematic Rotation Active ETF,United States,Broad Market,Broad Market / Core,40.0,1.32,4.44,8.2,2.56,6.6,34.97,40.0,29.64
+IGV,iShares Expanded Tech-Software Sector ETF,United States,Technology,Broad Market / Core,85.08,0.85,13.94,0.88,-14.73,-24.9,1.39,117.79,74.67
+HEFA,iShares Currency Hedged MSCI EAFE ETF,Broad,Broad Market,Broad Market / Core,45.05,1.19,1.65,6.33,4.28,15.11,39.46,45.18,32.3
+URTH,iShares MSCI World ETF,Broad,Broad Market,Broad Market / Core,195.79,1.25,3.93,7.71,3.46,8.74,38.14,195.79,141.73
+IJT,iShares S&P Small-Cap 600 Growth ETF,United States,Broad Market,"Growth, Small-Cap",159.83,2.4,4.48,11.48,6.02,12.84,41.52,159.83,112.94
+IXN,iShares Global Tech ETF,Broad,Technology,Broad Market / Core,116.63,1.73,8.14,12.19,8.67,12.78,69.97,116.63,68.62
+FXI,iShares China Large-Cap ETF,China,Broad Market,Large-Cap,37.6,0.99,3.72,3.87,-6.0,-4.5,18.85,41.3,31.64
+ESGE,iShares ESG Aware MSCI EM ETF,Broad,Broad Market,ESG/Sustainability,50.93,1.8,4.99,10.33,8.66,18.39,56.09,50.93,32.63
+EFAV,iShares MSCI EAFE Min Vol Factor ETF,Broad,Broad Market,Low Volatility,93.32,0.35,0.15,3.24,7.01,11.99,19.97,94.87,77.78
+DSI,iShares ESG MSCI KLD 400 ETF,United States,Broad Market,ESG/Sustainability,133.28,1.32,5.74,7.99,1.87,6.6,42.82,133.28,93.32
+EUFN,iShares MSCI Europe Financials ETF,Broad,Financials,Broad Market / Core,38.87,2.02,4.07,13.65,4.24,16.99,42.74,38.87,27.23
+IXJ,iShares Global Healthcare ETF,Broad,Healthcare,Broad Market / Core,95.8,1.68,1.29,3.12,-3.42,5.84,15.78,101.71,81.09
+IYF,iShares U.S. Financials ETF,United States,Financials,Broad Market / Core,125.34,0.85,3.15,7.74,-2.93,1.64,23.53,132.35,101.46
+EWC,iShares MSCI Canada ETF,Canada,Broad Market,Broad Market / Core,58.52,0.91,3.1,6.77,5.98,15.86,45.79,58.52,40.14
+ILF,iShares Latin America 40 ETF,Broad,Broad Market,Broad Market / Core,37.84,-0.26,0.05,12.32,16.57,38.55,69.58,38.1,22.31
+IVLU,iShares MSCI Intl Value Factor ETF,Broad,Broad Market,Value,42.13,0.98,1.32,7.39,6.74,21.22,47.84,43.01,28.5
+IMTM,iShares MSCI Intl Momentum Factor ETF,Broad,Broad Market,Momentum,52.81,1.54,2.29,9.75,5.37,15.44,38.03,53.08,38.26
+IWX,iShares Russell Top 200 Value ETF,United States,Broad Market,Value,98.13,0.88,2.17,5.46,3.5,12.11,32.2,98.13,74.23
+SUSA,iShares ESG Optimized MSCI USA ETF,United States,Broad Market,ESG/Sustainability,143.79,1.42,4.92,7.41,1.6,6.78,36.96,143.79,104.99
+AAXJ,iShares MSCI All Country Asia ex Japan ETF,Broad,Broad Market,Broad Market / Core,108.09,1.84,5.34,9.21,8.94,18.54,56.15,108.09,69.22
+IFRA,iShares U.S. Infrastructure ETF,United States,Industrials,Broad Market / Core,59.73,1.03,-0.03,4.75,6.11,12.43,41.55,60.26,42.2
+XT,iShares Future Exponential Technologies ETF,Broad,Technology,Broad Market / Core,74.92,1.65,5.57,8.66,4.22,10.52,51.0,74.92,49.62
+IHI,iShares U.S. Medical Devices ETF,United States,Healthcare,Broad Market / Core,54.22,1.86,1.84,-1.67,-13.07,-8.25,-2.77,64.36,52.6
+RING,iShares MSCI Global Gold Miners ETF,Broad,Materials,Broad Market / Core,86.77,3.08,1.01,13.22,3.98,25.16,103.1,99.42,37.71
+ACWV,iShares MSCI Global Min Vol Factor ETF,Broad,Broad Market,Low Volatility,122.27,0.65,1.91,2.24,2.0,3.24,10.24,125.2,110.91
+EEMV,iShares MSCI Emerging Markets Min Vol Factor ETF,Broad,Broad Market,"Low Volatility, Emerging Markets",70.75,2.05,4.4,9.28,6.73,11.64,25.28,70.75,56.48
+SMLF,iShares U.S. Small-Cap Equity Factor ETF,United States,Broad Market,Small-Cap,82.59,2.05,5.33,10.21,4.01,11.33,47.03,82.59,56.17
+IYH,iShares U.S. Healthcare ETF,United States,Healthcare,Broad Market / Core,62.65,1.49,1.39,2.05,-4.71,5.0,15.11,67.12,53.26
+IMCG,iShares Morningstar Mid-Cap Growth ETF,United States,Broad Market,"Growth, Mid-Cap",87.14,1.72,5.03,8.95,4.62,6.15,32.12,87.14,65.95
+INTF,iShares International Equity Factor ETF,Broad,Broad Market,Broad Market / Core,41.7,0.99,1.98,8.2,6.98,17.22,40.66,41.76,29.64
+LRGF,iShares U.S. Equity Factor ETF,United States,Broad Market,Broad Market / Core,71.81,1.28,4.63,7.73,2.85,5.43,36.43,71.81,52.64
+EWU,iShares MSCI United Kingdom ETF,United Kingdom,Broad Market,Broad Market / Core,48.25,0.86,1.22,6.32,7.01,17.04,36.31,48.68,35.4
+ILCG,iShares Morningstar Growth ETF,United States,Broad Market,Growth,108.63,1.61,6.77,10.44,3.6,4.7,45.95,108.69,74.43
+ITB,iShares U.S. Home Construction ETF,United States,Broad Market,Broad Market / Core,97.9,4.58,3.85,7.16,-10.35,-4.94,13.26,116.58,86.44
+IYY,iShares Dow Jones U.S. ETF,United States,Broad Market,Broad Market / Core,172.96,1.27,4.58,7.74,2.84,7.11,39.64,172.96,123.86
+AIA,iShares Asia 50 ETF,Broad,Broad Market,Broad Market / Core,120.93,1.78,5.76,9.48,14.4,28.74,88.68,120.93,64.09
+BDYN,iShares Dynamic Equity Active ETF,Broad,Broad Market,Broad Market / Core,26.32,1.25,3.58,6.77,1.23,6.09,6.56,26.47,23.6
+IPAC,iShares Core MSCI Pacific ETF,Broad,Broad Market,Broad Market / Core,81.85,1.02,1.9,6.94,6.88,14.63,38.1,83.73,59.27
+EWW,iShares MSCI Mexico ETF,Mexico,Broad Market,Broad Market / Core,79.46,0.57,-0.06,9.78,8.48,22.95,51.72,81.23,52.37
+IXC,iShares Global Energy ETF,Broad,Energy,Broad Market / Core,52.63,-3.24,-3.92,-4.55,19.61,32.16,49.04,58.26,35.31
+SMMD,iShares Russell 2500 ETF,United States,Broad Market,Broad Market / Core,84.32,1.85,4.78,10.74,5.05,13.34,49.13,84.32,56.54
+ESML,iShares ESG Aware MSCI USA Small-Cap ETF,United States,Broad Market,"ESG/Sustainability, Small-Cap",51.24,1.83,4.23,9.51,4.14,12.81,47.82,51.24,34.66
+PABU,iShares Paris-Aligned Climate Optimized MSCI USA ETF,United States,Broad Market,ESG/Sustainability,73.26,1.43,6.3,8.73,1.71,2.63,34.28,74.09,54.56
+ARTY,iShares Future AI & Tech ETF,Broad,Technology,AI & Robotics,58.65,1.73,12.18,18.06,15.05,20.48,102.45,58.65,28.97
+IYJ,iShares U.S. Industrials ETF,United States,Industrials,Broad Market / Core,158.82,1.79,2.37,6.99,2.23,9.72,33.2,161.75,119.24
+USCL,iShares Climate Conscious & Transition MSCI USA ETF,United States,Broad Market,ESG/Sustainability,80.74,1.1,5.15,7.58,1.56,3.73,32.4,80.74,60.98
+ICLN,iShares Global Clean Energy ETF,Broad,Energy,ESG/Sustainability,19.4,0.26,2.54,5.61,10.79,15.89,72.27,19.73,11.26
+IYG,iShares U.S. Financial Services ETF,United States,Financials,Broad Market / Core,88.38,0.91,3.16,8.39,-3.88,0.41,24.17,95.27,71.18
+IWL,iShares Russell Top 200 ETF,United States,Broad Market,Broad Market / Core,176.02,1.2,4.85,7.78,2.52,6.57,40.81,176.02,125.0
+EPP,iShares MSCI Pacific ex Japan ETF,Broad,Broad Market,Broad Market / Core,56.61,0.86,0.69,6.41,9.12,12.99,35.19,56.86,41.88
+EWP,iShares MSCI Spain ETF,Spain,Broad Market,AI & Robotics,58.39,1.78,1.65,9.63,7.59,20.94,53.01,58.39,38.16
+IAI,iShares U.S. Broker-Dealers & Securities Exchanges ETF,United States,Financials,Broad Market / Core,179.04,1.1,5.32,9.59,-5.57,3.9,40.44,189.59,127.49
+PICK,iShares MSCI Global Metals & Mining Producers ETF,Broad,Materials,Broad Market / Core,63.81,1.67,4.11,16.42,11.81,39.76,94.23,64.42,32.85
+EWG,iShares MSCI Germany ETF,Germany,Broad Market,Broad Market / Core,43.19,1.96,3.82,8.63,-0.12,4.0,18.57,44.56,36.42
+IEV,iShares Europe ETF,Broad,Broad Market,Broad Market / Core,73.25,1.51,2.22,8.63,3.93,12.47,31.26,74.35,55.81
+EEMA,iShares MSCI Emerging Markets Asia ETF,Broad,Broad Market,Emerging Markets,107.88,1.94,5.97,9.62,8.36,17.56,55.61,107.88,69.33
+EWL,iShares MSCI Switzerland ETF,Switzerland,Broad Market,Broad Market / Core,62.44,2.18,2.87,7.92,3.17,10.24,22.77,65.08,50.86
+EMGF,iShares Emerging Markets Equity Factor ETF,Broad,Broad Market,Emerging Markets,67.82,1.88,5.08,10.98,10.4,20.42,54.84,67.82,43.8
+EUSA,iShares MSCI USA Equal Weighted ETF,United States,Broad Market,Broad Market / Core,108.55,1.19,4.2,5.95,1.54,6.72,27.72,108.55,84.99
+BDVL,iShares Disciplined Volatility Equity Active ETF,Broad,Broad Market,Low Volatility,26.05,1.01,2.27,5.3,4.1,7.46,7.08,26.07,23.88
+IMCB,iShares Morningstar Mid-Cap ETF,United States,Broad Market,Mid-Cap,89.61,1.44,3.54,7.24,4.23,9.12,32.53,89.61,67.61
+LCTU,iShares U.S. Carbon Transition Readiness Aware Active ETF,United States,Energy,Broad Market / Core,76.32,1.28,4.51,7.3,1.83,5.87,38.33,76.32,55.17
+IYC,iShares U.S. Consumer Discretionary ETF,United States,Consumer,Broad Market / Core,104.87,1.57,4.89,7.42,-1.26,1.56,27.6,107.04,82.18
+EWA,iShares MSCI Australia ETF,Australia,Broad Market,Broad Market / Core,30.21,0.94,1.24,7.89,13.36,14.27,32.87,30.26,22.74
+IYE,iShares U.S. Energy ETF,United States,Energy,Broad Market / Core,58.31,-2.9,-3.52,-5.11,16.21,28.28,42.59,66.2,40.89
+IWC,iShares Micro-Cap ETF,United States,Broad Market,Broad Market / Core,180.92,2.52,6.8,14.1,6.13,13.8,78.36,180.92,101.43
+IDU,iShares U.S. Utilities ETF,United States,Utilities,Broad Market / Core,116.57,-0.37,-1.66,-0.81,5.84,0.92,21.68,120.07,95.8
+ECH,iShares MSCI Chile ETF,Chile,Broad Market,Broad Market / Core,44.97,1.47,5.94,13.08,1.86,35.08,53.42,47.37,29.31
+DIVB,iShares Core Dividend ETF,United States,Broad Market,Dividend/Income,56.16,1.06,2.63,5.72,3.27,9.67,30.19,56.76,43.14
+IYK,iShares U.S. Consumer Staples ETF,United States,Consumer,Broad Market / Core,70.24,0.92,-0.61,-0.33,1.31,4.0,2.1,77.28,64.93
+GARP,iShares MSCI USA Quality GARP ETF,United States,Broad Market,Quality,72.33,1.26,6.35,9.19,4.33,9.25,54.74,72.33,46.74
+IYM,iShares U.S. Basic Materials ETF,United States,Materials,Broad Market / Core,184.66,0.56,-0.43,8.11,8.72,25.05,49.98,189.08,123.12
+SLVP,iShares MSCI Global Silver and Metals Miners ETF,Broad,Materials,Broad Market / Core,39.91,3.8,4.09,15.18,-0.8,34.43,153.11,47.51,14.03
+USXF,iShares ESG Advanced MSCI USA ETF,United States,Broad Market,ESG/Sustainability,62.06,1.49,5.71,10.48,5.34,9.24,45.85,62.06,42.55
+DVYE,iShares Emerging Markets Dividend ETF,Broad,Broad Market,"Dividend/Income, Emerging Markets",35.77,0.62,1.1,6.4,9.56,23.54,45.01,35.77,24.67
+ILCV,iShares Morningstar Value ETF,United States,Broad Market,Value,98.01,0.87,2.68,5.24,2.07,9.86,33.47,98.01,73.43
+IGRO,iShares International Dividend Growth ETF,Broad,Broad Market,"Growth, Dividend/Income",88.65,0.99,2.0,6.94,4.72,11.88,25.64,89.82,70.56
+ILCB,iShares Morningstar U.S. Equity ETF,United States,Broad Market,Broad Market / Core,98.26,1.28,4.72,7.71,2.83,7.19,39.8,98.26,70.29
+EXI,iShares Global Industrials ETF,Broad,Industrials,Broad Market / Core,196.32,1.66,1.6,6.26,5.13,14.76,42.31,199.86,137.96
+IYT,iShares U.S. Transportation ETF,United States,Industrials,Broad Market / Core,81.87,1.9,5.82,10.55,4.92,15.71,41.84,82.1,57.72
+SUSL,iShares ESG MSCI USA Leaders ETF,United States,Broad Market,ESG/Sustainability,124.69,1.44,5.45,7.65,1.39,7.32,41.91,124.69,87.87
+CRBN,iShares Low Carbon Optimized MSCI ACWI ETF,Broad,Energy,Broad Market / Core,244.24,1.6,4.74,8.32,3.59,9.1,38.5,244.24,176.35
+IHE,iShares U.S. Pharmaceuticals ETF,United States,Broad Market,Broad Market / Core,88.79,2.19,1.88,4.4,3.56,20.65,41.41,91.54,60.89
+KXI,iShares Global Consumer Staples ETF,Broad,Consumer,Broad Market / Core,67.84,1.15,-0.12,0.94,1.48,5.36,6.06,73.56,62.63
+IMCV,iShares Morningstar Mid-Cap Value ETF,United States,Broad Market,"Value, Mid-Cap",88.56,1.17,2.09,5.69,3.73,12.12,32.66,88.92,66.76
+ISCG,iShares Morningstar Small-Cap Growth ETF,United States,Broad Market,"Growth, Small-Cap",60.79,2.17,5.37,9.97,2.5,9.54,47.56,60.79,41.2
+IGE,iShares North American Natural Resources ETF,Broad,Broad Market,Broad Market / Core,60.58,-1.14,-2.16,0.26,12.22,26.45,51.51,63.3,39.98
+EZA,iShares MSCI South Africa ETF,South Africa,Broad Market,Broad Market / Core,74.62,3.31,3.44,13.3,1.19,19.19,67.31,81.6,44.55
+WSML,iShares MSCI World Small-Cap ETF,Broad,Broad Market,Small-Cap,33.85,1.72,3.78,8.8,4.83,13.47,45.0,33.85,23.35
+IETC,iShares U.S. Tech Independence Focused ETF,United States,Technology,Broad Market / Core,100.85,1.3,9.7,9.86,-0.53,-1.05,45.22,107.74,69.45
+EIS,iShares MSCI Israel ETF,Israel,Broad Market,Broad Market / Core,129.81,2.74,3.36,6.77,8.79,31.72,80.82,129.81,71.79
+BALI,iShares U.S. Large Cap Premium Income Active ETF,United States,Broad Market,"Dividend/Income, Large-Cap",32.86,1.51,4.19,6.55,4.91,9.69,36.85,32.86,24.01
+EWS,iShares MSCI Singapore ETF,Singapore,Broad Market,Broad Market / Core,29.41,0.89,1.48,5.15,4.85,7.21,32.54,29.43,22.19
+IYZ,iShares U.S. Telecommunications ETF,United States,Communication Services,Broad Market / Core,43.02,0.44,4.42,10.17,27.57,30.87,75.21,43.02,24.55
+IHAK,iShares Cybersecurity and Tech ETF,Broad,Technology,Broad Market / Core,46.72,1.06,11.33,3.68,-4.58,-9.13,3.86,53.92,41.26
+EWH,iShares MSCI Hong Kong ETF,Hong Kong,Broad Market,Broad Market / Core,23.47,0.34,-1.72,3.62,2.89,14.86,51.09,24.21,15.53
+IHF,iShares U.S. Healthcare Providers ETF,United States,Healthcare,Broad Market / Core,45.74,1.6,3.95,5.78,-7.9,-8.52,-3.35,51.04,40.4
+XVV,iShares ESG Select Screened S&P 500 ETF,United States,Broad Market,ESG/Sustainability,54.34,1.44,5.17,8.42,2.5,6.56,39.54,54.34,38.94
+EWI,iShares MSCI Italy ETF,Italy,Broad Market,Broad Market / Core,58.72,1.43,2.51,12.04,7.15,17.87,44.34,58.72,40.68
+SMIN,iShares MSCI India Small-Cap ETF,India,Broad Market,Small-Cap,68.36,3.17,5.35,11.83,0.56,-5.53,-1.2,76.72,57.89
+DMXF,iShares ESG Advanced MSCI EAFE ETF,Broad,Broad Market,ESG/Sustainability,82.18,1.63,3.55,9.16,5.18,11.05,29.85,82.39,63.29
+IXG,iShares Global Financials ETF,Broad,Financials,Broad Market / Core,123.35,1.36,3.44,9.79,1.3,8.48,30.01,124.09,94.87
+KSA,iShares MSCI Saudi Arabia ETF,Saudi Arabia,Broad Market,Broad Market / Core,40.59,0.54,2.27,7.55,6.84,0.47,4.75,40.63,35.83
+EWJV,iShares MSCI Japan Value ETF,Japan,Broad Market,Value,44.46,0.82,1.23,5.96,5.3,19.78,43.34,47.57,31.02
+IXP,iShares Global Comm Services ETF,Broad,Broad Market,Broad Market / Core,123.92,0.44,4.77,5.22,3.1,4.05,39.74,126.51,88.68
+HEZU,iShares Currency Hedged MSCI Eurozone ETF,Broad,Broad Market,Broad Market / Core,47.12,2.3,2.59,7.46,3.22,11.84,34.28,47.29,35.09
+IAT,iShares U.S. Regional Banks ETF,United States,Financials,Broad Market / Core,58.4,1.94,1.94,13.02,2.9,18.32,47.06,62.51,39.71
+INDY,iShares India 50 ETF,India,Broad Market,Broad Market / Core,45.49,2.11,2.97,6.09,-5.9,-6.22,-5.91,50.55,40.97
+ISCV,iShares Morningstar Small-Cap Value ETF,United States,Broad Market,"Value, Small-Cap",74.25,1.64,3.38,8.78,2.69,12.22,41.61,74.25,52.43
+EPOL,iShares MSCI Poland ETF,Poland,Broad Market,Broad Market / Core,40.64,1.78,3.44,15.26,12.42,27.68,49.29,40.64,27.22
+ISCF,iShares International Small-Cap Equity Factor ETF,Broad,Broad Market,Small-Cap,45.43,1.35,2.86,8.12,5.38,13.39,39.01,45.71,32.68
+HEWJ,iShares Currency Hedged MSCI Japan ETF,Japan,Broad Market,Broad Market / Core,60.18,0.69,2.03,6.76,6.66,22.81,62.92,60.54,36.94
+EPU,iShares MSCI Peru and Global Exposure ETF,Broad,Broad Market,Broad Market / Core,85.17,0.61,-0.62,8.84,2.6,33.42,100.41,93.84,42.5
+IEO,iShares U.S. Oil & Gas Exploration & Production ETF,United States,Energy,Broad Market / Core,110.55,-4.34,-4.63,-7.53,20.27,26.58,43.31,128.99,77.14
+TOPT,iShares Top 20 U.S. Stocks ETF,United States,Broad Market,Broad Market / Core,31.59,1.02,5.05,8.26,2.73,4.5,44.65,31.82,21.84
+BIDD,iShares International Dividend Active ETF,Broad,Broad Market,Dividend/Income,30.89,1.53,3.52,7.52,3.55,11.17,28.16,31.4,24.1
+ICOP,iShares Copper and Metals Mining ETF,Broad,Materials,Broad Market / Core,54.1,1.94,3.54,18.72,8.24,39.97,119.56,57.3,24.64
+EEMS,iShares MSCI Emerging Markets Small-Cap ETF,Broad,Broad Market,"Small-Cap, Emerging Markets",77.07,2.55,5.43,10.84,10.8,16.24,43.75,77.07,53.61
+TECB,iShares U.S. Tech Breakthrough Multisector ETF,United States,Technology,Broad Market / Core,61.62,0.73,7.69,8.64,1.33,0.87,37.29,64.0,44.88
+IAK,iShares U.S. Insurance ETF,United States,Financials,Broad Market / Core,133.72,1.04,3.11,4.56,3.36,4.61,9.08,135.88,122.59
+EWQ,iShares MSCI France ETF,France,Broad Market,Broad Market / Core,46.76,1.52,1.98,8.47,3.0,5.8,23.35,48.35,37.91
+SIZE,iShares MSCI USA Size Factor ETF,United States,Broad Market,Broad Market / Core,169.83,0.99,3.52,6.37,1.3,6.76,28.74,169.83,131.92
+EWM,iShares MSCI Malaysia ETF,Malaysia,Broad Market,Broad Market / Core,29.16,1.36,1.78,-0.61,3.11,15.45,31.33,30.13,22.08
+XJH,iShares ESG Select Screened S&P Mid-Cap ETF,United States,Broad Market,"ESG/Sustainability, Mid-Cap",49.25,2.18,4.06,8.96,4.01,13.5,39.0,49.25,35.43
+TUR,iShares MSCI Turkey ETF,Turkey,Broad Market,Broad Market / Core,43.37,2.48,3.07,11.98,14.31,34.57,40.3,43.37,29.24
+EWD,iShares MSCI Sweden ETF,Sweden,Broad Market,Broad Market / Core,54.37,2.03,4.86,10.58,6.5,15.69,34.77,54.72,40.34
+EWN,iShares MSCI Netherlands ETF,Netherlands,Broad Market,Broad Market / Core,64.12,1.57,2.69,9.91,4.09,14.24,46.37,64.12,43.81
+MXI,iShares Global Materials ETF,Broad,Materials,Broad Market / Core,114.08,1.27,1.39,11.36,8.96,23.96,45.6,116.54,78.35
+HAWX,iShares Currency Hedged MSCI ACWI ex U.S. ETF,Broad,Broad Market,Broad Market / Core,43.96,1.31,2.72,7.35,6.0,16.2,44.33,43.96,30.46
+EIDO,iShares MSCI Indonesia ETF,Indonesia,Broad Market,Broad Market / Core,16.54,1.97,3.38,7.47,-13.94,-2.96,6.97,19.22,15.12
+PABD,iShares Paris-Aligned Climate Optimized MSCI World ex USA ETF,Broad,Broad Market,ESG/Sustainability,69.27,1.69,3.14,9.08,2.79,10.45,31.3,70.12,52.76
+SMMV,iShares MSCI USA Small-Cap Min Vol Factor ETF,United States,Broad Market,"Low Volatility, Small-Cap",45.4,0.99,2.05,3.86,1.96,7.12,16.76,46.05,38.88
+THD,iShares MSCI Thailand ETF,Thailand,Broad Market,AI & Robotics,71.96,1.58,0.35,9.91,19.32,22.84,43.47,75.05,47.98
+WOOD,iShares Global Timber & Forestry ETF,Broad,Broad Market,Broad Market / Core,72.61,1.68,1.42,3.86,-5.41,5.43,5.31,82.45,65.94
+QTOP,iShares Nasdaq Top 30 Stocks ETF,United States,Broad Market,Broad Market / Core,34.09,1.19,6.17,10.54,5.73,9.48,56.52,34.09,21.78
+EVUS,iShares ESG Aware MSCI USA Value ETF,United States,Broad Market,"ESG/Sustainability, Value",33.8,1.08,2.7,5.46,2.63,8.34,28.26,33.8,26.35
+JXI,iShares Global Utilities ETF,Broad,Utilities,Broad Market / Core,87.2,-0.76,-2.23,0.53,8.67,8.16,29.98,89.4,67.09
+ISCB,iShares Morningstar Small-Cap ETF,United States,Broad Market,Small-Cap,70.75,1.89,4.4,9.32,2.57,10.75,44.53,70.75,48.95
+RXI,iShares Global Consumer Discretionary ETF,Broad,Consumer,Broad Market / Core,204.71,2.34,5.26,8.57,-2.94,0.89,25.62,213.56,162.97
+LCTD,iShares World ex U.S. Carbon Transition Readiness Aware Active ETF,Broad,Energy,Broad Market / Core,59.43,1.21,2.4,7.78,5.33,12.76,35.02,60.06,44.01
+TOK,iShares MSCI Kokusai ETF,Broad,Broad Market,AI & Robotics,145.03,1.24,4.05,7.68,3.3,8.42,38.29,145.03,104.87
+IVVW,iShares S&P 500 BuyWrite ETF,United States,Broad Market,Broad Market / Core,44.44,0.59,1.01,3.44,1.46,7.12,26.03,44.44,35.26
+CNYA,iShares MSCI China A ETF,China,Broad Market,Broad Market / Core,36.46,1.19,3.34,4.95,1.64,9.03,37.6,36.46,26.38
+HEEM,iShares Currency Hedged MSCI Emerging Markets ETF,Broad,Broad Market,Emerging Markets,40.58,1.57,4.33,8.55,9.63,23.06,59.06,40.58,25.52
+EWZS,iShares MSCI Brazil Small-Cap ETF,Brazil,Broad Market,Small-Cap,16.08,0.75,1.45,17.03,18.85,26.11,52.51,16.08,10.54
+AQLT,iShares MSCI Global Quality Factor ETF,Broad,Broad Market,Quality,30.28,1.56,3.72,8.1,4.56,11.77,39.42,30.28,21.72
+IEZ,iShares U.S. Oil Equipment & Services ETF,United States,Energy,Broad Market / Core,28.84,-1.2,-2.04,5.6,20.91,57.91,83.17,29.81,15.4
+EDEN,iShares MSCI Denmark ETF,Denmark,Broad Market,Broad Market / Core,112.42,0.55,3.03,10.31,-6.27,2.83,14.6,125.6,98.1
+SCJ,iShares MSCI Japan Small-Cap ETF,Japan,Broad Market,Small-Cap,103.49,0.95,1.07,6.48,8.26,16.51,35.98,106.93,76.11
+TENM,iShares Large Cap 10% Target Buffer Mar ETF,United States,Broad Market,Large-Cap,26.22,0.61,2.34,4.82,2.26,,5.08,26.22,24.61
+HSCZ,iShares Currency Hedged MSCI EAFE Small-Cap ETF,Broad,Broad Market,Small-Cap,42.65,1.32,2.42,7.14,4.88,14.65,42.42,42.65,29.95
+UAE,iShares MSCI UAE ETF,United Arab Emirates,Broad Market,Broad Market / Core,20.4,3.08,6.31,14.09,3.4,5.8,27.15,22.23,16.04
+SVAL,iShares US Small Cap Value Factor ETF,United States,Broad Market,"Value, Small-Cap",38.84,2.24,3.05,10.82,5.72,18.14,46.75,38.84,26.47
+EPHE,iShares MSCI Philippines ETF,Philippines,Broad Market,Broad Market / Core,25.51,0.75,0.08,3.66,-3.3,1.08,3.38,28.37,23.09
+SDG,iShares MSCI Global Sustainable Development Goals ETF,Broad,Broad Market,"ESG/Sustainability, AI & Robotics",88.97,1.41,1.88,7.79,5.04,7.4,29.08,88.97,68.93
+GLOF,iShares Global Equity Factor ETF,Broad,Broad Market,Broad Market / Core,56.86,1.36,3.95,8.12,5.3,11.7,41.71,56.86,40.13
+IDRV,iShares Self-Driving EV and Tech ETF,Broad,Technology,Broad Market / Core,43.41,2.31,7.11,16.38,9.55,18.53,64.84,43.41,26.33
+MAXJ,iShares Large Cap Max Buffer Jun ETF,United States,Broad Market,Large-Cap,28.7,0.16,0.75,1.68,1.48,3.18,16.12,28.7,24.72
+IEUS,iShares MSCI Europe Small-Cap ETF,Broad,Broad Market,Small-Cap,73.72,1.75,4.33,11.02,4.69,11.25,31.07,73.72,56.25
+EWO,iShares MSCI Austria ETF,Austria,Broad Market,Broad Market / Core,40.01,1.75,4.08,14.61,10.56,29.48,62.8,40.01,24.58
+IVVM,iShares Large Cap Moderate Quarterly Laddered ETF,United States,Broad Market,Large-Cap,35.86,0.59,2.25,4.86,2.19,5.81,25.08,35.86,28.67
+JPXN,iShares JPX-Nikkei 400 ETF,Japan,Broad Market,Broad Market / Core,97.01,0.83,2.05,6.3,6.32,15.55,37.07,101.0,70.77
+IDNA,iShares Genomics Immunology and Healthcare ETF,Broad,Healthcare,Broad Market / Core,31.21,1.79,6.45,8.75,10.71,25.32,63.34,31.21,18.88
+IDGT,iShares U.S. Digital Infrastructure and Real Estate ETF,United States,Real Estate,Broad Market / Core,115.58,1.36,7.3,16.09,32.2,33.1,67.89,115.58,68.84
+DMAX,iShares Large Cap Max Buffer Dec ETF,United States,Broad Market,Large-Cap,26.99,0.25,0.78,1.44,1.18,3.23,11.05,26.99,24.31
+EMXF,iShares ESG Advanced MSCI EM ETF,Broad,Broad Market,ESG/Sustainability,53.29,1.82,5.12,10.41,9.88,19.11,48.93,53.29,35.78
+IVVB,iShares Large Cap Deep Quarterly Laddered ETF,United States,Broad Market,Large-Cap,33.63,0.57,2.62,3.52,0.54,4.14,21.35,33.64,27.71
+ISVL,iShares International Developed Small Cap Value Factor ETF,Broad,Broad Market,"Value, Small-Cap",51.89,0.95,2.39,8.35,5.15,16.64,42.67,52.74,36.37
+XJR,iShares ESG Select Screened S&P Small-Cap ETF,United States,Broad Market,"ESG/Sustainability, Small-Cap",47.84,2.39,4.39,11.67,5.18,13.09,41.8,47.84,33.74
+SMAX,iShares Large Cap Max Buffer Sep ETF,United States,Broad Market,Large-Cap,27.39,0.26,1.07,1.86,1.27,2.99,11.88,27.39,24.48
+BLCV,iShares Large Cap Value Active ETF,United States,Broad Market,"Value, Large-Cap",38.69,1.42,2.91,6.44,0.34,9.56,30.13,39.18,29.73
+VEGI,iShares MSCI Agriculture Producers ETF,Broad,Broad Market,Broad Market / Core,45.35,-0.53,-2.16,0.49,8.94,18.42,28.06,47.16,35.41
+BLCR,iShares Large Cap Core Active ETF,United States,Broad Market,Large-Cap,46.23,1.38,4.62,9.63,6.12,16.88,67.46,46.23,27.61
+IDYN,iShares International Equity Factor Rotation Active ETF,United States,Broad Market,Broad Market / Core,31.0,1.22,1.47,7.13,5.76,15.51,22.07,31.89,25.4
+ECNS,iShares MSCI China Small-Cap ETF,China,Broad Market,Small-Cap,34.73,1.64,2.87,4.01,-0.97,-2.92,44.37,38.2,24.06
+BKF,iShares MSCI BIC ETF,Broad,Broad Market,Broad Market / Core,43.91,1.55,4.05,6.71,-2.81,-0.39,17.59,45.74,37.34
+POWR,iShares U.S. Power Infrastructure ETF,United States,Industrials,Broad Market / Core,26.78,0.79,-0.85,1.59,11.62,14.68,33.03,27.01,20.13
+IBLC,iShares Blockchain and Tech ETF,Broad,Technology,AI & Robotics,46.2,3.18,15.69,11.19,-0.88,-25.75,109.99,62.22,22.0
+QAT,iShares MSCI Qatar ETF,Qatar,Broad Market,Broad Market / Core,19.38,0.42,0.06,3.81,-0.22,2.86,13.02,20.31,17.15
+KWT,iShares MSCI Kuwait ETF,Kuwait,Broad Market,AI & Robotics,38.82,-0.04,4.04,8.08,3.7,1.2,16.62,40.22,33.28
+EIRL,iShares MSCI Ireland ETF,Broad,Broad Market,Broad Market / Core,74.75,2.59,3.15,9.85,1.73,12.79,32.14,77.11,56.57
+DVYA,iShares Asia/Pacific Dividend ETF,Broad,Broad Market,Dividend/Income,50.63,0.8,0.92,4.8,8.83,20.68,54.66,51.43,32.74
+ENZL,iShares MSCI New Zealand ETF,New Zealand,Broad Market,Broad Market / Core,44.57,-0.29,0.34,0.68,-2.32,-0.01,5.06,48.0,41.67
+IDEF,iShares Defense Industrials Active ETF,Broad,Industrials,Broad Market / Core,34.99,0.69,2.52,-0.27,-1.93,11.09,39.74,36.8,25.04
+ENOR,iShares MSCI Norway ETF,Norway,Broad Market,Broad Market / Core,36.03,-2.67,-2.81,0.7,22.43,29.5,50.5,37.6,23.94
+TCHI,iShares MSCI China Multisector Tech ETF,China,Technology,Broad Market / Core,23.84,1.59,5.95,5.67,-5.07,-3.05,39.58,26.74,17.08
+IWMW,iShares Russell 2000 BuyWrite ETF,United States,Broad Market,Broad Market / Core,38.16,0.61,1.0,5.49,1.41,3.81,28.75,38.44,29.64
+EWUS,iShares MSCI United Kingdom Small-Cap ETF,United Kingdom,Broad Market,Small-Cap,43.91,2.38,4.42,9.42,2.05,9.09,28.99,45.04,34.04
+TEND,iShares Large Cap 10% Target Buffer Dec ETF,United States,Broad Market,Large-Cap,26.27,0.88,3.0,5.28,2.4,5.45,5.0,26.27,24.24
+MADE,iShares U.S. Manufacturing ETF,United States,Broad Market,Broad Market / Core,37.12,2.51,2.17,9.53,9.25,26.77,75.34,37.12,21.17
+EFNL,iShares MSCI Finland ETF,Finland,Broad Market,Broad Market / Core,53.65,0.77,2.15,9.49,9.29,25.11,50.85,53.94,35.56
+LDEM,iShares ESG MSCI EM Leaders ETF,Broad,Broad Market,ESG/Sustainability,63.2,1.56,4.15,8.44,3.03,9.36,38.32,64.67,45.69
+MMAX,iShares Large Cap Max Buffer Mar ETF,United States,Broad Market,Large-Cap,26.83,0.06,0.52,1.28,2.02,3.89,9.88,26.83,24.41
+IBAT,iShares Energy Storage & Materials ETF,Broad,Energy,Broad Market / Core,39.89,1.45,5.5,18.83,27.81,32.2,104.9,39.89,19.47
+STEN,iShares Large Cap 10% Target Buffer Sep ETF,United States,Broad Market,Large-Cap,26.44,0.82,3.27,5.48,2.56,6.26,5.6,26.44,24.31
+INRO,iShares U.S. Industry Rotation Active ETF,United States,Broad Market,Broad Market / Core,33.8,1.35,4.87,8.44,3.89,7.73,41.82,33.8,23.83
+TEK,iShares Technology Opportunities Active ETF,Broad,Technology,Broad Market / Core,34.04,1.71,8.06,15.72,11.03,10.37,67.6,34.04,20.31
+IEDI,iShares U.S. Consumer Focused ETF,United States,Consumer,Broad Market / Core,57.61,2.32,3.65,7.08,-1.11,3.46,19.51,58.35,48.21
+EWK,iShares MSCI Belgium ETF,Belgium,Broad Market,Broad Market / Core,26.7,1.95,2.57,11.16,5.53,12.6,34.58,27.48,19.84
+TWOX,iShares Large Cap Accelerated Outcome ETF,United States,Broad Market,Large-Cap,28.15,0.37,1.88,3.31,-1.04,5.13,30.93,28.75,21.5
+EGUS,iShares ESG Aware MSCI USA Growth ETF,United States,Broad Market,"ESG/Sustainability, Growth",53.69,1.46,6.87,9.96,2.28,4.45,48.2,54.59,36.23
+ILIT,iShares Lithium Miners and Producers ETF,Broad,Materials,Broad Market / Core,20.81,1.09,13.7,29.81,11.57,52.22,195.16,20.81,6.85
+BILT,iShares Infrastructure Active ETF,Broad,Industrials,Broad Market / Core,29.19,0.25,-1.13,2.22,11.76,12.26,17.89,29.61,24.76
+TOPC,iShares S&P 500 3% Capped ETF,United States,Broad Market,Broad Market / Core,32.5,1.04,4.05,6.97,2.92,7.45,36.69,32.5,23.77
+XOEF,iShares S&P 500 ex S&P 100 ETF,United States,Broad Market,Broad Market / Core,28.24,1.31,3.38,6.18,4.61,11.25,14.08,28.24,24.35
+CORO,iShares International Country Rotation Active ETF,Broad,Broad Market,Broad Market / Core,34.88,0.98,2.77,7.99,7.36,17.22,45.22,35.08,24.02
+QNXT,iShares Nasdaq-100 ex Top 30 ETF,United States,Broad Market,Broad Market / Core,28.25,1.51,5.89,5.36,0.74,2.04,29.97,28.52,21.74
+TEXN,iShares Texas Equity ETF,United States,Broad Market,Broad Market / Core,30.79,-0.13,2.65,2.54,8.67,11.89,23.38,30.83,24.66
+EVLU,iShares MSCI Emerging Markets Value Factor ETF,Broad,Broad Market,"Value, Emerging Markets",37.0,1.88,4.95,9.17,9.14,25.4,60.7,37.33,23.02
+BALQ,iShares Nasdaq Premium Income Active ETF,United States,Broad Market,Dividend/Income,51.45,1.19,5.91,9.25,5.61,,6.73,51.45,43.99
+TENJ,iShares Large Cap 10% Target Buffer Jun ETF,United States,Broad Market,Large-Cap,26.27,0.81,3.16,5.07,2.42,,5.33,26.27,24.34
+EQLT,iShares MSCI Emerging Markets Quality Factor ETF,Broad,Broad Market,"Quality, Emerging Markets",36.38,2.1,6.44,12.37,13.0,24.11,58.51,36.38,22.95
+EMIF,iShares Emerging Markets Infrastructure ETF,Broad,Industrials,Emerging Markets,29.25,0.31,-0.61,4.69,8.66,18.79,45.14,30.78,20.15
+BMED,iShares Health Innovation Active ETF,Broad,Healthcare,Broad Market / Core,29.51,1.65,2.27,3.38,-6.13,6.29,30.11,32.02,22.68
+BPAY,iShares FinTech Active ETF,Broad,Technology,Broad Market / Core,25.58,2.55,12.76,14.16,-5.72,-14.37,17.87,32.14,21.33
+ENHU,iShares Enhanced Large Cap Core Active ETF,United States,Broad Market,Large-Cap,26.36,1.23,4.42,7.61,3.2,,6.06,26.36,23.45
+BGRO,iShares Large Cap Growth Active ETF,United States,Broad Market,"Growth, Large-Cap",39.45,1.57,7.0,9.84,1.94,3.28,41.45,40.32,27.89
+BELT,iShares U.S. Select Equity Active ETF,United States,Broad Market,Broad Market / Core,37.31,2.0,6.33,12.12,7.51,11.87,48.86,37.31,25.07
+ESMV,iShares ESG Optimized MSCI USA Min Vol Factor ETF,United States,Broad Market,"ESG/Sustainability, Low Volatility",29.24,0.79,2.97,2.49,1.1,2.07,10.63,29.77,26.43
+IVRS,iShares Future Metaverse Tech and Communications ETF,Broad,Technology,Metaverse,32.21,1.71,10.86,6.33,-12.41,-16.39,12.91,40.01,27.43
+EFRA,iShares Environmental Infrastructure and Industrials ETF,Broad,Industrials,Broad Market / Core,36.08,0.85,-0.37,5.4,3.24,8.45,25.5,37.46,28.75
+IBRN,iShares Neuroscience and Healthcare ETF,Broad,Healthcare,Broad Market / Core,35.72,2.67,6.56,15.77,11.16,27.87,75.08,35.72,20.4
+ETEC,iShares Breakthrough Environmental Solutions ETF,Broad,Broad Market,Broad Market / Core,28.8,1.23,1.85,7.47,10.66,15.97,70.16,28.87,16.93
