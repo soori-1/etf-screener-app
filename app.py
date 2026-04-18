@@ -106,7 +106,7 @@ if selected_themes:
 st.divider()
 
 # --- 6. ADVANCED TREEMAP VISUALIZATION ---
-st.subheader("📊 Capital Rotation Treemap (Finviz Style)")
+st.subheader("📊 Capital Rotation Treemap")
 
 timeframe_options = {
     "1 Day": "Intraday 1D (%)",
