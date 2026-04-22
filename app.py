@@ -17,7 +17,6 @@ def load_baseline():
         df['Sector'] = df['Sector'].fillna('Other Sectors')
         df['Theme'] = df['Theme'].fillna('Other Themes')
         df['Country'] = df['Country'].fillna('Unclassified')
-        # Ensure tickers are clean strings so they merge perfectly
         df['Ticker'] = df['Ticker'].astype(str).str.strip()
         return df
     except FileNotFoundError:
@@ -36,34 +35,24 @@ def load_volume_data(tickers):
     except Exception:
         return pd.DataFrame(columns=['Ticker', '30D_Volume'])
 
-# --- 3. Rock-Solid Live Fetcher ---
+# --- 3. Weekend-Proof Live Fetcher ---
 def get_live_prices(tickers):
     try:
-        data = yf.download(tickers, period="5d", interval="1d")
+        # Fetch 5 days to guarantee we get yesterday's close if today is a weekend/holiday
+        live_data = yf.download(tickers, period="5d", interval="1d")['Close']
+        live_data = live_data.ffill() 
         
-        # Safely extract close prices regardless of yfinance format changes
-        if isinstance(data.columns, pd.MultiIndex):
-            close_data = data['Close']
-        elif 'Close' in data.columns:
-            close_data = data[['Close']]
-        else:
-            close_data = data
-            
-        close_data = close_data.ffill().dropna(axis=1, how='all')
+        latest_prices = live_data.iloc[-1]  
+        prev_prices = live_data.iloc[-2]    
         
-        if len(close_data) >= 2:
-            latest_prices = close_data.iloc[-1]  
-            prev_prices = close_data.iloc[-2]    
-            returns_1d = ((latest_prices - prev_prices) / prev_prices) * 100
-            
-            df_live = pd.DataFrame({
-                'Ticker': returns_1d.index.astype(str).str.strip(),
-                'Live_CMP': latest_prices.values,
-                'Dynamic_1D_Return': returns_1d.values
-            })
-            return df_live
-        else:
-            return pd.DataFrame(columns=['Ticker', 'Live_CMP', 'Dynamic_1D_Return'])
+        returns_1d = ((latest_prices - prev_prices) / prev_prices) * 100
+        
+        df_live = pd.DataFrame({
+            'Ticker': returns_1d.index.astype(str).str.strip(),
+            'Live_CMP': latest_prices.values,
+            'Dynamic_1D_Return': returns_1d.values
+        })
+        return df_live
     except Exception as e:
         return pd.DataFrame(columns=['Ticker', 'Live_CMP', 'Dynamic_1D_Return'])
 
@@ -95,7 +84,7 @@ if refresh_clicked or 'df_merged' not in st.session_state:
         if 'Dynamic_1D_Return' in df_merged.columns:
             df_merged['Intraday 1D (%)'] = df_merged['Dynamic_1D_Return']
         else:
-            df_merged['Intraday 1D (%)'] = np.nan
+            df_merged['Intraday 1D (%)'] = 0.0
 
         # Safe 52W Math
         if '52W High' in df_merged.columns and '52W Low' in df_merged.columns:
@@ -160,7 +149,9 @@ st.write(f"Box Size = **30-Day Avg Volume** | Box Color = **{selected_timeframe}
 plot_df = filtered_df.copy()
 plot_df = plot_df.dropna(subset=['Ticker'])
 
+# THE FIX: Strip out '%' signs and commas from the CSV strings so Python can calculate the math
 if metric_col in plot_df.columns:
+    plot_df[metric_col] = plot_df[metric_col].astype(str).str.replace('%', '', regex=False).str.replace(',', '', regex=False)
     plot_df[metric_col] = pd.to_numeric(plot_df[metric_col], errors='coerce')
 else:
     plot_df[metric_col] = 0.0
@@ -208,7 +199,7 @@ else:
         )
     )
 
-    # Reverting back to Plotly's beautiful native formatting (Text will automatically shrink to fit boxes!)
+    # Reverting back to the beautiful layout where text automatically scales!
     fig.update_traces(
         texttemplate="<b>%{label}</b><br>%{color:.2f}%", 
         textfont_size=14,
