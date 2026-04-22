@@ -23,10 +23,11 @@ def load_baseline():
         st.error("⚠️ historical_baseline.csv not found.")
         st.stop()
 
-@st.cache_data
+# REMOVED @st.cache_data to prevent thread collision on the cloud server
 def load_volume_data(tickers):
     try:
-        vol_data = yf.download(tickers, period="1mo", interval="1d")['Volume']
+        # Added threads=False to prevent cloud memory crashes
+        vol_data = yf.download(tickers, period="1mo", interval="1d", threads=False)['Volume']
         avg_vol = vol_data.mean()
         df_vol = avg_vol.reset_index()
         df_vol.columns = ['Ticker', '30D_Volume']
@@ -38,8 +39,8 @@ def load_volume_data(tickers):
 # --- 3. Weekend-Proof Live Fetcher ---
 def get_live_prices(tickers):
     try:
-        # Fetch 5 days to guarantee we get yesterday's close if today is a weekend/holiday
-        live_data = yf.download(tickers, period="5d", interval="1d")['Close']
+        # Added threads=False to prevent cloud memory crashes
+        live_data = yf.download(tickers, period="5d", interval="1d", threads=False)['Close']
         live_data = live_data.ffill() 
         
         latest_prices = live_data.iloc[-1]  
@@ -149,7 +150,7 @@ st.write(f"Box Size = **30-Day Avg Volume** | Box Color = **{selected_timeframe}
 plot_df = filtered_df.copy()
 plot_df = plot_df.dropna(subset=['Ticker'])
 
-# THE FIX: Strip out '%' signs and commas from the CSV strings so Python can calculate the math
+# Strip out '%' signs and commas
 if metric_col in plot_df.columns:
     plot_df[metric_col] = plot_df[metric_col].astype(str).str.replace('%', '', regex=False).str.replace(',', '', regex=False)
     plot_df[metric_col] = pd.to_numeric(plot_df[metric_col], errors='coerce')
@@ -199,7 +200,6 @@ else:
         )
     )
 
-    # Reverting back to the beautiful layout where text automatically scales!
     fig.update_traces(
         texttemplate="<b>%{label}</b><br>%{color:.2f}%", 
         textfont_size=14,
