@@ -6,10 +6,10 @@ from datetime import datetime
 import numpy as np
 
 # --- 1. Page Configuration ---
-st.set_page_config(page_title="Right Horizons - Global ETF Screener", layout="wide")
+st.set_page_config(page_title="Global ETF Screener", layout="wide")
 st.markdown('<style>div.block-container{padding-top:1rem;}</style>', unsafe_allow_html=True)
 
-# --- 2. Data Handling (Baseline + Volume) ---
+# --- 2. Data Handling ---
 @st.cache_data
 def load_baseline():
     try:
@@ -17,9 +17,11 @@ def load_baseline():
         df['Sector'] = df['Sector'].fillna('Other Sectors')
         df['Theme'] = df['Theme'].fillna('Other Themes')
         df['Country'] = df['Country'].fillna('Unclassified')
+        # Ensure tickers are clean strings so they merge perfectly
+        df['Ticker'] = df['Ticker'].astype(str).str.strip()
         return df
     except FileNotFoundError:
-        st.error("⚠️ historical_baseline.csv not found. Please run update_baseline.py first.")
+        st.error("⚠️ historical_baseline.csv not found.")
         st.stop()
 
 @st.cache_data
@@ -29,20 +31,41 @@ def load_volume_data(tickers):
         avg_vol = vol_data.mean()
         df_vol = avg_vol.reset_index()
         df_vol.columns = ['Ticker', '30D_Volume']
+        df_vol['Ticker'] = df_vol['Ticker'].astype(str).str.strip()
         return df_vol
-    except Exception as e:
+    except Exception:
         return pd.DataFrame(columns=['Ticker', '30D_Volume'])
 
-# --- 3. Live Price Fetcher ---
+# --- 3. Rock-Solid Live Fetcher ---
 def get_live_prices(tickers):
     try:
-        live_data = yf.download(tickers, period="1d", interval="1m")['Close']
-        latest_prices = live_data.ffill().iloc[-1] 
-        df_live = latest_prices.reset_index()
-        df_live.columns = ['Ticker', 'Live_CMP']
-        return df_live
+        data = yf.download(tickers, period="5d", interval="1d")
+        
+        # Safely extract close prices regardless of yfinance format changes
+        if isinstance(data.columns, pd.MultiIndex):
+            close_data = data['Close']
+        elif 'Close' in data.columns:
+            close_data = data[['Close']]
+        else:
+            close_data = data
+            
+        close_data = close_data.ffill().dropna(axis=1, how='all')
+        
+        if len(close_data) >= 2:
+            latest_prices = close_data.iloc[-1]  
+            prev_prices = close_data.iloc[-2]    
+            returns_1d = ((latest_prices - prev_prices) / prev_prices) * 100
+            
+            df_live = pd.DataFrame({
+                'Ticker': returns_1d.index.astype(str).str.strip(),
+                'Live_CMP': latest_prices.values,
+                'Dynamic_1D_Return': returns_1d.values
+            })
+            return df_live
+        else:
+            return pd.DataFrame(columns=['Ticker', 'Live_CMP', 'Dynamic_1D_Return'])
     except Exception as e:
-        return pd.DataFrame(columns=['Ticker', 'Live_CMP'])
+        return pd.DataFrame(columns=['Ticker', 'Live_CMP', 'Dynamic_1D_Return'])
 
 # Load Base Data
 df_baseline = load_baseline()
@@ -52,7 +75,7 @@ tickers_list = df_baseline['Ticker'].dropna().tolist()
 st.write("") 
 col_title, col_btn = st.columns([4, 1])
 with col_title:
-    st.title("🌐 Right Horizons - Global ETF Screener Dashboard")
+    st.title("🌐 Global ETF Screener Dashboard")
 with col_btn:
     st.write("") 
     refresh_clicked = st.button("🔄 Refresh Live Prices", use_container_width=True)
@@ -61,21 +84,28 @@ if 'last_refresh' not in st.session_state:
     st.session_state.last_refresh = "Never"
 
 if refresh_clicked or 'df_merged' not in st.session_state:
-    with st.spinner("Fetching live prices and 30-Day Volume data..."):
+    with st.spinner("Fetching live prices and volume..."):
         df_live = get_live_prices(tickers_list)
         df_vol = load_volume_data(tickers_list)
         
         df_merged = pd.merge(df_baseline, df_live, on='Ticker', how='left')
         df_merged = pd.merge(df_merged, df_vol, on='Ticker', how='left')
         
-        df_merged['Live_CMP'] = df_merged['Live_CMP'].fillna(df_merged['Yesterday_Close'])
-        df_merged['Intraday 1D (%)'] = ((df_merged['Live_CMP'] - df_merged['Yesterday_Close']) / df_merged['Yesterday_Close']) * 100
-        df_merged['% From 52W High'] = ((df_merged['Live_CMP'] - df_merged['52W High']) / df_merged['52W High']) * 100
-        df_merged['% From 52W Low'] = ((df_merged['Live_CMP'] - df_merged['52W Low']) / df_merged['52W Low']) * 100
+        # Map 1D Return dynamically
+        if 'Dynamic_1D_Return' in df_merged.columns:
+            df_merged['Intraday 1D (%)'] = df_merged['Dynamic_1D_Return']
+        else:
+            df_merged['Intraday 1D (%)'] = np.nan
+
+        # Safe 52W Math
+        if '52W High' in df_merged.columns and '52W Low' in df_merged.columns:
+            df_merged['% From 52W High'] = ((df_merged['Live_CMP'] - df_merged['52W High']) / df_merged['52W High']) * 100
+            df_merged['% From 52W Low'] = ((df_merged['Live_CMP'] - df_merged['52W Low']) / df_merged['52W Low']) * 100
         
         cols_to_round = ['Live_CMP', 'Intraday 1D (%)', '% From 52W High', '% From 52W Low']
         for col in cols_to_round:
-            df_merged[col] = df_merged[col].round(2)
+            if col in df_merged.columns:
+                df_merged[col] = df_merged[col].round(2)
         
         st.session_state.df_merged = df_merged
         st.session_state.last_refresh = datetime.now().strftime('%H:%M:%S')
@@ -106,7 +136,7 @@ if selected_themes:
 st.divider()
 
 # --- 6. ADVANCED TREEMAP VISUALIZATION ---
-st.subheader("📊 Capital Rotation Treemap")
+st.subheader("📊 Capital Rotation Treemap (Finviz Style)")
 
 timeframe_options = {
     "1 Day": "Intraday 1D (%)",
@@ -129,7 +159,11 @@ st.write(f"Box Size = **30-Day Avg Volume** | Box Color = **{selected_timeframe}
 # --- DATA CLEANING ---
 plot_df = filtered_df.copy()
 plot_df = plot_df.dropna(subset=['Ticker'])
-plot_df[metric_col] = pd.to_numeric(plot_df[metric_col], errors='coerce')
+
+if metric_col in plot_df.columns:
+    plot_df[metric_col] = pd.to_numeric(plot_df[metric_col], errors='coerce')
+else:
+    plot_df[metric_col] = 0.0
 
 if '30D_Volume' in plot_df.columns:
     plot_df['30D_Volume'] = pd.to_numeric(plot_df['30D_Volume'], errors='coerce').fillna(1000)
@@ -161,24 +195,6 @@ else:
         range_color=c_range
     )
 
-    # --- INLINE NAME & PERCENTAGE GENERATOR ---
-    try:
-        computed_colors = fig.data[0].marker.colors
-        labels = fig.data[0].labels
-        custom_text = []
-        
-        # Combine the sector/ETF name and its average directly side-by-side
-        for label, c in zip(labels, computed_colors):
-            if pd.isna(c):
-                custom_text.append(f"<b>{label}</b>")
-            else:
-                custom_text.append(f"<b>{label}</b> ({c:.2f}%)")
-                
-        fig.data[0].text = custom_text
-    except Exception as e:
-        pass 
-    # ----------------------------------------
-
     fig.update_layout(
         margin=dict(t=0, l=10, r=10, b=0), 
         paper_bgcolor='rgba(0,0,0,0)',            
@@ -192,8 +208,9 @@ else:
         )
     )
 
+    # Reverting back to Plotly's beautiful native formatting (Text will automatically shrink to fit boxes!)
     fig.update_traces(
-        textinfo="text", # We tell Plotly to ONLY use our new combined text
+        texttemplate="<b>%{label}</b><br>%{color:.2f}%", 
         textfont_size=14,
         marker_line_color="#1E1E1E", 
         hovertemplate='<b>%{label}</b><br>Return: %{color:.2f}%<br>Volume: %{value:,.0f}'
@@ -212,8 +229,10 @@ display_cols = [
     '% From 52W High', '% From 52W Low'
 ]
 
+valid_cols = [col for col in display_cols if col in plot_df.columns]
+
 st.dataframe(
-    plot_df[display_cols].sort_values(by='Intraday 1D (%)', ascending=False), 
+    plot_df[valid_cols].sort_values(by='Intraday 1D (%)', ascending=False) if 'Intraday 1D (%)' in valid_cols else plot_df[valid_cols], 
     use_container_width=True, 
     hide_index=True
 )
