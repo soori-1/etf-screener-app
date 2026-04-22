@@ -33,16 +33,27 @@ def load_volume_data(tickers):
     except Exception as e:
         return pd.DataFrame(columns=['Ticker', '30D_Volume'])
 
-# --- 3. Live Price Fetcher ---
+# --- 3. Live Price Fetcher (Upgraded for Weekends/Market Closed) ---
 def get_live_prices(tickers):
     try:
-        live_data = yf.download(tickers, period="1d", interval="1m")['Close']
-        latest_prices = live_data.ffill().iloc[-1] 
-        df_live = latest_prices.reset_index()
-        df_live.columns = ['Ticker', 'Live_CMP']
+        # Fetch last 5 days to guarantee we have the last 2 valid trading days
+        hist_data = yf.download(tickers, period="5d", interval="1d")['Close']
+        hist_data = hist_data.ffill() 
+        
+        latest_prices = hist_data.iloc[-1]  # Most recent price (live or yesterday's close)
+        prev_prices = hist_data.iloc[-2]    # Previous trading day's close
+        
+        # Calculate actual 1-Day Return dynamically
+        returns_1d = ((latest_prices - prev_prices) / prev_prices) * 100
+        
+        df_live = pd.DataFrame({
+            'Ticker': latest_prices.index,
+            'Live_CMP': latest_prices.values,
+            'Dynamic_1D_Return': returns_1d.values
+        })
         return df_live
     except Exception as e:
-        return pd.DataFrame(columns=['Ticker', 'Live_CMP'])
+        return pd.DataFrame(columns=['Ticker', 'Live_CMP', 'Dynamic_1D_Return'])
 
 # Load Base Data
 df_baseline = load_baseline()
@@ -69,7 +80,7 @@ if refresh_clicked or 'df_merged' not in st.session_state:
         df_merged = pd.merge(df_merged, df_vol, on='Ticker', how='left')
         
         df_merged['Live_CMP'] = df_merged['Live_CMP'].fillna(df_merged['Yesterday_Close'])
-        df_merged['Intraday 1D (%)'] = ((df_merged['Live_CMP'] - df_merged['Yesterday_Close']) / df_merged['Yesterday_Close']) * 100
+        df_merged['Intraday 1D (%)'] = df_merged['Dynamic_1D_Return']
         df_merged['% From 52W High'] = ((df_merged['Live_CMP'] - df_merged['52W High']) / df_merged['52W High']) * 100
         df_merged['% From 52W Low'] = ((df_merged['Live_CMP'] - df_merged['52W Low']) / df_merged['52W Low']) * 100
         
