@@ -217,12 +217,7 @@ try:
                 ticks="outside"
             )
         )
-        try:
-        computed_colors = fig.data[0].marker.colors
-        # Safely map every single box (including Sector averages) to a clean text percentage
-        fig.data[0].text = [f"{c:.2f}%" if not pd.isna(c) else "0.00%" for c in computed_colors]
-        except Exception:
-            pass
+
         # Plotly's native formatting - scales text beautifully
         fig.update_traces(
             texttemplate="<b>%{label}</b><br>%{color:.2f}%", 
