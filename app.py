@@ -17,6 +17,8 @@ def load_baseline():
         df['Sector'] = df['Sector'].fillna('Other Sectors')
         df['Theme'] = df['Theme'].fillna('Other Themes')
         df['Country'] = df['Country'].fillna('Unclassified')
+        # Ensure tickers are clean strings so they merge perfectly
+        df['Ticker'] = df['Ticker'].astype(str).str.strip()
         return df
     except FileNotFoundError:
         st.error("⚠️ historical_baseline.csv not found.")
@@ -29,40 +31,40 @@ def load_volume_data(tickers):
         avg_vol = vol_data.mean()
         df_vol = avg_vol.reset_index()
         df_vol.columns = ['Ticker', '30D_Volume']
+        df_vol['Ticker'] = df_vol['Ticker'].astype(str).str.strip()
         return df_vol
     except Exception:
         return pd.DataFrame(columns=['Ticker', '30D_Volume'])
 
-# --- 3. Ironclad Live Fetcher ---
+# --- 3. Rock-Solid Live Fetcher ---
 def get_live_prices(tickers):
     try:
-        # Fetch last 5 days to guarantee we have the last 2 valid trading days
-        hist_data = yf.download(tickers, period="5d", interval="1d")
+        data = yf.download(tickers, period="5d", interval="1d")
         
-        # Safely extract close prices regardless of yfinance version
-        if isinstance(hist_data.columns, pd.MultiIndex):
-            close_data = hist_data['Close']
-        elif 'Close' in hist_data.columns:
-            close_data = hist_data['Close']
+        # Safely extract close prices regardless of yfinance format changes
+        if isinstance(data.columns, pd.MultiIndex):
+            close_data = data['Close']
+        elif 'Close' in data.columns:
+            close_data = data[['Close']]
         else:
-            close_data = hist_data
+            close_data = data
             
-        close_data = close_data.ffill() 
-        latest_prices = close_data.iloc[-1]  
-        prev_prices = close_data.iloc[-2]    
+        close_data = close_data.ffill().dropna(axis=1, how='all')
         
-        # Calculate dynamic 1-day return
-        returns_1d = ((latest_prices - prev_prices) / prev_prices) * 100
-        
-        df_live = pd.DataFrame({
-            'Ticker': returns_1d.index,
-            'Live_CMP': latest_prices.values,
-            'Dynamic_1D_Return': returns_1d.values
-        })
-        return df_live
+        if len(close_data) >= 2:
+            latest_prices = close_data.iloc[-1]  
+            prev_prices = close_data.iloc[-2]    
+            returns_1d = ((latest_prices - prev_prices) / prev_prices) * 100
+            
+            df_live = pd.DataFrame({
+                'Ticker': returns_1d.index.astype(str).str.strip(),
+                'Live_CMP': latest_prices.values,
+                'Dynamic_1D_Return': returns_1d.values
+            })
+            return df_live
+        else:
+            return pd.DataFrame(columns=['Ticker', 'Live_CMP', 'Dynamic_1D_Return'])
     except Exception as e:
-        # If Yahoo breaks, we print the error so we can fix it!
-        st.error(f"⚠️ Yahoo Finance Download Error: {e}")
         return pd.DataFrame(columns=['Ticker', 'Live_CMP', 'Dynamic_1D_Return'])
 
 # Load Base Data
@@ -89,11 +91,11 @@ if refresh_clicked or 'df_merged' not in st.session_state:
         df_merged = pd.merge(df_baseline, df_live, on='Ticker', how='left')
         df_merged = pd.merge(df_merged, df_vol, on='Ticker', how='left')
         
-        # Safe mapping for 1D returns
+        # Map 1D Return dynamically
         if 'Dynamic_1D_Return' in df_merged.columns:
             df_merged['Intraday 1D (%)'] = df_merged['Dynamic_1D_Return']
         else:
-            df_merged['Intraday 1D (%)'] = 0.0
+            df_merged['Intraday 1D (%)'] = np.nan
 
         # Safe 52W Math
         if '52W High' in df_merged.columns and '52W Low' in df_merged.columns:
@@ -193,21 +195,6 @@ else:
         range_color=c_range
     )
 
-    try:
-        computed_colors = fig.data[0].marker.colors
-        labels = fig.data[0].labels
-        custom_text = []
-        
-        for label, c in zip(labels, computed_colors):
-            if pd.isna(c):
-                custom_text.append(f"<b>{label}</b>")
-            else:
-                custom_text.append(f"<b>{label}</b> ({c:.2f}%)")
-                
-        fig.data[0].text = custom_text
-    except Exception as e:
-        pass 
-
     fig.update_layout(
         margin=dict(t=0, l=10, r=10, b=0), 
         paper_bgcolor='rgba(0,0,0,0)',            
@@ -221,8 +208,9 @@ else:
         )
     )
 
+    # Reverting back to Plotly's beautiful native formatting (Text will automatically shrink to fit boxes!)
     fig.update_traces(
-        textinfo="text", 
+        texttemplate="<b>%{label}</b><br>%{color:.2f}%", 
         textfont_size=14,
         marker_line_color="#1E1E1E", 
         hovertemplate='<b>%{label}</b><br>Return: %{color:.2f}%<br>Volume: %{value:,.0f}'
