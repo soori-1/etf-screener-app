@@ -392,13 +392,12 @@ try:
             plot_bgcolor='rgba(0,0,0,0)',
             font=dict(family="Arial, sans-serif"),
             coloraxis_colorbar=dict(
-                title="Return (%)",
+                title=dict(text="Return (%)", font=dict(size=12, color='#7B3F00')),
                 thicknessmode="pixels", thickness=14,
                 lenmode="pixels",       len=280,
                 yanchor="top",          y=1,
                 ticks="outside",
                 tickfont=dict(size=11),
-                titlefont=dict(size=12, color='#7B3F00'),
             )
         )
 
