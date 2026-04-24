@@ -15,6 +15,7 @@ try:
     @st.cache_data
     def load_baseline():
         df = pd.read_csv('historical_baseline.csv')
+        df['Name'] = df['Name'].fillna(df['Ticker'])   # fallback to ticker if name missing
         df['Sector'] = df['Sector'].fillna('Other Sectors')
         df['Theme'] = df['Theme'].fillna('Other Themes')
         df['Country'] = df['Country'].fillna('Unclassified')
@@ -40,35 +41,32 @@ try:
             return pd.DataFrame(columns=['Ticker', '30D_Volume'])
 
     # --- 3. Weekend-Proof Live Fetcher ---
-    def get_live_prices(tickers):
-        try:
-            live_data = yf.download(tickers, period="5d", interval="1d")
-            
-            # Extract Close safely
-            if isinstance(live_data.columns, pd.MultiIndex):
-                close_data = live_data['Close']
-            elif 'Close' in live_data.columns:
-                close_data = live_data['Close']
-            else:
-                close_data = live_data
+   def get_live_prices(tickers):
+    try:
+        live_data = yf.download(tickers, period="5d", interval="1d", group_by='ticker', auto_adjust=True)
+        
+        records = []
+        for ticker in tickers:
+            try:
+                if isinstance(live_data.columns, pd.MultiIndex):
+                    ticker_data = live_data[ticker]['Close'].dropna()
+                else:
+                    ticker_data = live_data['Close'].dropna()
                 
-            close_data = close_data.ffill() 
-            
-            if len(close_data) >= 2:
-                latest_prices = close_data.iloc[-1]  
-                prev_prices = close_data.iloc[-2]    
-                returns_1d = ((latest_prices - prev_prices) / prev_prices) * 100
+                if len(ticker_data) >= 2:
+                    latest = ticker_data.iloc[-1]
+                    prev   = ticker_data.iloc[-2]
+                    ret_1d = ((latest - prev) / prev) * 100
+                else:
+                    latest, ret_1d = np.nan, np.nan
                 
-                df_live = pd.DataFrame({
-                    'Ticker': returns_1d.index.astype(str).str.strip(),
-                    'Live_CMP': latest_prices.values,
-                    'Dynamic_1D_Return': returns_1d.values
-                })
-                return df_live
-            else:
-                return pd.DataFrame(columns=['Ticker', 'Live_CMP', 'Dynamic_1D_Return'])
-        except Exception as e:
-            return pd.DataFrame(columns=['Ticker', 'Live_CMP', 'Dynamic_1D_Return'])
+                records.append({'Ticker': str(ticker).strip(), 'Live_CMP': latest, 'Dynamic_1D_Return': ret_1d})
+            except Exception:
+                records.append({'Ticker': str(ticker).strip(), 'Live_CMP': np.nan, 'Dynamic_1D_Return': np.nan})
+        
+        return pd.DataFrame(records)
+    except Exception as e:
+        return pd.DataFrame(columns=['Ticker', 'Live_CMP', 'Dynamic_1D_Return'])
 
     # Load Base Data
     try:
@@ -203,6 +201,7 @@ try:
             color=metric_col,  
             color_continuous_scale='RdYlGn', 
             range_color=c_range
+            custom_data=['Name']
         )
 
         fig.update_layout(
@@ -223,13 +222,18 @@ try:
             texttemplate="<b>%{label}</b><br>%{color:.2f}%", 
             textfont_size=14,
             marker_line_color="#1E1E1E", 
-            hovertemplate='<b>%{label}</b><br>Return: %{color:.2f}%<br>Volume: %{value:,.0f}'
+            hovertemplate=('<b>%{label}</b><br>'
+                            '%{customdata[0]}<br>'        # ← ETF full name
+                            'Return: %{color:.2f}%<br>'
+                            'Volume: %{value:,.0f}'
+                            '<extra></extra>' 
+            )
         )
 
         st.plotly_chart(fig, use_container_width=True, theme="streamlit") 
 
     st.divider()
-
+    
     # --- 7. CORE METRICS TABLE ---
     st.subheader("📋 Underlying Performance Data")
     display_cols = [
