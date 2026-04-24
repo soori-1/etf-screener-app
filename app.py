@@ -176,34 +176,52 @@ def load_baseline():
 
 
 def _fetch_single(ticker: str, period: str = "5d") -> dict:
-    """Download one ticker safely; return dict with Close series."""
-    try:
-        data = yf.Ticker(ticker).history(period=period, interval="1d", auto_adjust=True)
-        if data.empty:
-            return {}
-        return {'close': data['Close'].dropna(), 'volume': data['Volume'].dropna()}
-    except Exception:
-        return {}
+    """Download one ticker safely; return dict with Close + Volume series."""
+    for attempt in range(2):
+        try:
+            tk = yf.Ticker(ticker)
+            data = tk.history(period=period, interval="1d", auto_adjust=True, timeout=10)
+            if data is not None and not data.empty and 'Close' in data.columns:
+                return {
+                    'close':  data['Close'].dropna(),
+                    'volume': data['Volume'].dropna() if 'Volume' in data.columns else pd.Series(dtype=float)
+                }
+        except Exception:
+            if attempt == 0:
+                continue
+    return {}
+
+
+@st.cache_data(ttl=600, show_spinner=False)
+def _fetch_one_cached(ticker: str):
+    """Cached wrapper — 10 min TTL so repeated refreshes don't re-hit yfinance."""
+    info = _fetch_single(ticker, period="1mo")
+    closes = info.get('close', pd.Series(dtype=float))
+    vol    = info.get('volume', pd.Series(dtype=float))
+
+    if len(closes) >= 2:
+        latest = float(closes.iloc[-1])
+        prev   = float(closes.iloc[-2])
+        ret_1d = round(((latest - prev) / prev) * 100, 2)
+    else:
+        latest, ret_1d = np.nan, np.nan
+
+    avg_vol = float(vol.mean()) if len(vol) > 0 else np.nan
+    return latest, ret_1d, avg_vol
 
 
 def get_live_prices(tickers: list) -> pd.DataFrame:
     records = []
     progress = st.progress(0, text="Fetching live prices…")
     total = len(tickers)
+    success = 0
 
     for i, ticker in enumerate(tickers):
-        info = _fetch_single(ticker, period="5d")
-        closes = info.get('close', pd.Series(dtype=float))
-
-        if len(closes) >= 2:
-            latest = float(closes.iloc[-1])
-            prev   = float(closes.iloc[-2])
-            ret_1d = round(((latest - prev) / prev) * 100, 2)
-        else:
-            latest, ret_1d = np.nan, np.nan
-
+        latest, ret_1d, _ = _fetch_one_cached(ticker)
+        if not np.isnan(latest):
+            success += 1
         records.append({'Ticker': ticker, 'Live_CMP': latest, 'Dynamic_1D_Return': ret_1d})
-        progress.progress((i + 1) / total, text=f"Fetching {ticker}… ({i+1}/{total})")
+        progress.progress((i + 1) / total, text=f"Fetching {ticker}… ({i+1}/{total}) • ✓ {success}")
 
     progress.empty()
     return pd.DataFrame(records)
@@ -212,9 +230,7 @@ def get_live_prices(tickers: list) -> pd.DataFrame:
 def get_volume_data(tickers: list) -> pd.DataFrame:
     records = []
     for ticker in tickers:
-        info = _fetch_single(ticker, period="1mo")
-        vol  = info.get('volume', pd.Series(dtype=float))
-        avg_vol = float(vol.mean()) if len(vol) > 0 else np.nan
+        _, _, avg_vol = _fetch_one_cached(ticker)
         records.append({'Ticker': ticker, '30D_Volume': avg_vol})
     return pd.DataFrame(records)
 
@@ -237,7 +253,7 @@ try:
     <div class="rh-header">
         <div>
             <h1>🌐 Global ETF Screener Dashboard</h1>
-            <p>Real-time capital rotation tracker powered by Yahoo Finance</p>
+            <p>Real-time etf tracker powered by RH</p>
         </div>
         <div class="rh-badge">RIGHT HORIZONS</div>
     </div>
@@ -258,6 +274,17 @@ try:
     if refresh_clicked or 'df_merged' not in st.session_state:
         df_live = get_live_prices(tickers_list)
         df_vol  = get_volume_data(tickers_list)
+
+        # Diagnostic: how many tickers actually returned data?
+        good = df_live['Live_CMP'].notna().sum()
+        bad  = df_live['Live_CMP'].isna().sum()
+        if bad > 0:
+            st.warning(
+                f"⚠️ Yahoo Finance returned data for {good}/{good+bad} tickers. "
+                f"{bad} tickers failed — possibly rate-limited or invalid ticker symbols. "
+                f"Failed: {', '.join(df_live[df_live['Live_CMP'].isna()]['Ticker'].head(10).tolist())}"
+                + ("…" if bad > 10 else "")
+            )
 
         df_merged = pd.merge(df_baseline, df_live, on='Ticker', how='left')
         df_merged = pd.merge(df_merged,   df_vol,  on='Ticker', how='left')
@@ -367,6 +394,13 @@ try:
         }
         c_range = c_range_map.get(selected_timeframe, [-10, 10])
 
+        # Build a display-text column that handles NaN cleanly and only shows
+        # the % on leaf (ticker) rows — parents show just the name.
+        plot_df['_display_label'] = plot_df['Ticker']
+        plot_df['_display_pct']   = plot_df[metric_col].apply(
+            lambda v: f"{v:+.2f}%" if pd.notna(v) else ""
+        )
+
         fig = px.treemap(
             plot_df,
             path=[px.Constant("Global ETFs"), 'Sector', 'Theme', 'Ticker'],
@@ -382,7 +416,7 @@ try:
                 [1.0,  '#145A32'],
             ],
             range_color=c_range,
-            custom_data=['Name']
+            custom_data=['Name', '_display_pct']
         )
 
         fig.update_layout(
@@ -402,7 +436,7 @@ try:
         )
 
         fig.update_traces(
-            texttemplate="<b>%{label}</b><br>%{color:.2f}%",
+            texttemplate="<b>%{label}</b><br>%{customdata[1]}",
             textfont=dict(size=13, family="Arial, sans-serif"),
             marker_line_color="#F9F6F1",
             marker_line_width=1.5,
@@ -410,7 +444,7 @@ try:
                 '<b>%{label}</b><br>'
                 '<i>%{customdata[0]}</i><br>'
                 '──────────────<br>'
-                'Return : <b>%{color:.2f}%</b><br>'
+                'Return : <b>%{customdata[1]}</b><br>'
                 'Avg Vol: <b>%{value:,.0f}</b>'
                 '<extra></extra>'
             )
@@ -455,7 +489,7 @@ try:
         return ''
 
     st.dataframe(
-        styled.style.applymap(color_pct, subset=pct_cols)
+        styled.style.map(color_pct, subset=pct_cols)
                     .format({c: "{:.2f}" for c in pct_cols if c in styled.columns}, na_rep="—")
                     .format({'Live_CMP': "{:.2f}", '30D_Volume': "{:,.0f}"}, na_rep="—"),
         use_container_width=True,
