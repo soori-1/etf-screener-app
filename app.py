@@ -42,7 +42,7 @@ try:
 
     # --- 3. Weekend-Proof Live Fetcher ---
    def get_live_prices(tickers):
-    try:
+        try:
         live_data = yf.download(tickers, period="5d", interval="1d", group_by='ticker', auto_adjust=True)
         
         records = []
